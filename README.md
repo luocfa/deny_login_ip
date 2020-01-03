@@ -26,5 +26,5 @@
 
 > 详细逻辑，见详细的代码注释
 
-> github地址：[https://github.com/luocfa/deny_login_ip/edit/master/README.md](https://github.com/luocfa/deny_login_ip/edit/master/README.md)
+> github地址：[https://github.com/luocfa/deny_login_ip](https://github.com/luocfa/deny_login_ip)
 
