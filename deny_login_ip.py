@@ -41,7 +41,8 @@ def monitorLog(logFile):
             if group and not deniedDict.get(group[1]):
                 subprocess.getoutput('echo \'sshd:{}\' >> {}'.format(group[1], hostDeny))
                 deniedDict[group[1]] = '1'
-                print('add ip:{} to hosts.deny for invalid user'.format(group[1]))
+                time_str = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+                print('{} --- add ip:{} to hosts.deny for invalid user'.format(time_str, group[1]))
                 continue
 
             # 用户名合法 密码错误的
@@ -58,8 +59,8 @@ def monitorLog(logFile):
                     del tempIp[ip]
                     subprocess.getoutput('echo \'sshd:{}\' >> {}'.format(ip, hostDeny))
                     deniedDict[ip] = '1'
-                    print('add ip:{} to hosts.deny for invalid password'.format(ip))
+                    time_str = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+                    print('{} --- add ip:{} to hosts.deny for invalid password'.format(time_str, ip))
 
 if __name__ == '__main__':
     monitorLog(logFile)
-
